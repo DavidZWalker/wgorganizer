@@ -3,9 +3,9 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import * 
 import sys
-from UI_MainWindow import UI_MainWindow
-from UI_Cleaning import UI_Cleaning
-from UI_Settings import UI_Settings
+from ui.UI_MainWindow import UI_MainWindow
+from ui.UI_Cleaning import UI_Cleaning
+from ui.UI_Settings import UI_Settings
 from DateTimeProvider import DateTimeProvider
 
 
@@ -17,7 +17,7 @@ class UIManager():
         self.ui.setupUI(self.mainWindow)
 
         self.datetimeProvider = DateTimeProvider()
-        self.updateTime()
+        self.updateDateTime()
         self.startTimer()
 
         self.cleaningScreen = UI_Cleaning()
@@ -44,11 +44,13 @@ class UIManager():
 
     def startTimer(self):
         timer = QTimer(self.mainWindow)
-        timer.timeout.connect(self.updateTime)
+        timer.timeout.connect(self.updateDateTime)
         timer.start(1000)
 
-    def updateTime(self):
+    def updateDateTime(self):
+        currentDateAsString = self.datetimeProvider.getDateAsString()
         currentTimeAsString = self.datetimeProvider.getTimeAsString()
+        self.ui.datelabel.setText(currentDateAsString)
         self.ui.timelabel.setText(currentTimeAsString)
 
         
