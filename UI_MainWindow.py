@@ -30,7 +30,7 @@ class UI_MainWindow(QMainWindow):
         self.datelabel.setFont(QFont(baseFont, 20, 0, True))
         self.timelabel = QLabel("TIME PH", self.titlebar)
         self.timelabel.setGeometry(800,40,100,25)
-        self.timelabel.setFont(QFont(baseFont, 20, 0, True))
+        self.timelabel.setFont(QFont(baseFont, 24, 0, True))
 
         self.title = QLabel("TITLE", self.titlebar)
         self.title.setGeometry(80,15,397,50)
