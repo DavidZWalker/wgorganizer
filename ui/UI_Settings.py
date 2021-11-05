@@ -12,7 +12,7 @@ class UI_Settings(QWidget):
 
         self.membersLabel = QLabel("WG-Mitglieder", self)
         self.membersLabel.setFont(QFont(baseFont, 36, 2, False))
-        self.membersLabel.setGeometry(100, 100, 300, 100)
+        self.membersLabel.setGeometry(80, 80, 300, 50)
 
         self.applyButton = QPushButton("Übernehmen", self)
         self.applyButton.setGeometry(390,764,100,50)
