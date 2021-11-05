@@ -26,11 +26,11 @@ class UI_MainWindow(QMainWindow):
         self.content.setGeometry(80,80,944,520)
 
         self.datelabel = QLabel("DATE PH", self.titlebar)
-        self.datelabel.setGeometry(800,15,100,25)
+        self.datelabel.setGeometry(750,15,150,25)
         self.datelabel.setFont(QFont(baseFont, 20, 0, True))
         self.timelabel = QLabel("TIME PH", self.titlebar)
-        self.timelabel.setGeometry(800,40,100,25)
-        self.timelabel.setFont(QFont(baseFont, 24, 0, True))
+        self.timelabel.setGeometry(750,40,150,25)
+        self.timelabel.setFont(QFont(baseFont, 30, 0, True))
 
         self.title = QLabel("TITLE", self.titlebar)
         self.title.setGeometry(80,15,397,50)

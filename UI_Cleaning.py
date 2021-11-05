@@ -4,9 +4,12 @@ from PyQt5.QtGui import *
 import sys
 
 class UI_Cleaning(QWidget):
+    
     def __init__(self):
         super().__init__()
+        self.title = "Putzdienst"
         baseFont = "SF Pro"
+        
         self.thisWeekLabel = QLabel("Diese Woche", self)
         self.thisWeekLabel.setFont(QFont(baseFont, 36, 2, False))
         self.thisWeekLabel.setGeometry(100, 100, 300, 50)

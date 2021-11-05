@@ -4,8 +4,10 @@ from PyQt5.QtGui import *
 import sys
 
 class UI_Settings(QWidget):
+
     def __init__(self):
         super().__init__()
+        self.title = "Settings"
         baseFont = "SF Pro"
 
         self.membersLabel = QLabel("WG-Mitglieder", self)

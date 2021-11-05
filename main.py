@@ -17,6 +17,7 @@ class UIManager():
         self.ui.setupUI(self.mainWindow)
 
         self.datetimeProvider = DateTimeProvider()
+        self.updateTime()
         self.startTimer()
 
         self.cleaningScreen = UI_Cleaning()
@@ -25,15 +26,17 @@ class UIManager():
         self.settingsScreen = UI_Settings()
         self.ui.content.addWidget(self.settingsScreen)
 
-        self.ui.content.setCurrentWidget(self.cleaningScreen)
+        self.switchTo("cleaning")
 
         self.ui.settingsButton.clicked.connect(lambda: self.switchTo("settings"))
         self.ui.putzdienstButton.clicked.connect(lambda: self.switchTo("cleaning"))
 
     def switchTo(self, widgetName):
         if widgetName == "cleaning":
+            self.ui.title.setText(self.cleaningScreen.title)
             self.ui.content.setCurrentWidget(self.cleaningScreen)
         elif widgetName == "settings":
+            self.ui.title.setText(self.settingsScreen.title)
             self.ui.content.setCurrentWidget(self.settingsScreen)
 
     def show(self):
