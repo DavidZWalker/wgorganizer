@@ -6,7 +6,7 @@ import sys
 from ui.UI_MainWindow import UI_MainWindow
 from ui.UI_Cleaning import UI_Cleaning
 from ui.UI_Settings import UI_Settings
-from DateTimeProvider import DateTimeProvider
+from util.DateTimeProvider import DateTimeProvider
 
 
 class UIManager():
