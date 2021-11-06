@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import * 
 from PyQt5 import QtCore
-from PyQt5.QtGui import * 
+from PyQt5.QtGui import *
+from PyQt5.QtCore import QTimer
+from util.DateTimeProvider import DateTimeProvider
 import sys
 
 class UI_MainWindow(QMainWindow):
@@ -11,8 +13,10 @@ class UI_MainWindow(QMainWindow):
         mainWindow.resize(1024, 600)
         mainWindow.setMinimumSize(QtCore.QSize(1024, 600))
         mainWindow.setMaximumSize(QtCore.QSize(1024, 600))
-
         mainWindow.setGeometry(0,0,1024,600)
+
+        self.datetimeProvider = DateTimeProvider()
+        self.startTimer()
 
         self.sidebar = QWidget(mainWindow)
         self.sidebar.setGeometry(0,0,80,600)
@@ -25,10 +29,10 @@ class UI_MainWindow(QMainWindow):
         self.content = QStackedWidget(mainWindow)
         self.content.setGeometry(80,80,944,520)
 
-        self.datelabel = QLabel("DATE PH", self.titlebar)
+        self.datelabel = QLabel(self.datetimeProvider.getDateAsString(), self.titlebar)
         self.datelabel.setGeometry(750,15,150,25)
         self.datelabel.setFont(QFont(baseFont, 20, 0, True))
-        self.timelabel = QLabel("TIME PH", self.titlebar)
+        self.timelabel = QLabel(self.datetimeProvider.getTimeAsString(), self.titlebar)
         self.timelabel.setGeometry(750,40,150,25)
         self.timelabel.setFont(QFont(baseFont, 30, 0, True))
 
@@ -41,3 +45,14 @@ class UI_MainWindow(QMainWindow):
 
         self.settingsButton = QToolButton(self.sidebar)
         self.settingsButton.setGeometry(0,520,80,80)
+
+    def startTimer(self):
+        timer = QTimer(self)
+        timer.timeout.connect(self.updateDateTime)
+        timer.start(1000)
+
+    def updateDateTime(self):
+        currentDateAsString = self.datetimeProvider.getDateAsString()
+        currentTimeAsString = self.datetimeProvider.getTimeAsString()
+        self.datelabel.setText(currentDateAsString)
+        self.timelabel.setText(currentTimeAsString)
