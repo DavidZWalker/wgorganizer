@@ -20,4 +20,3 @@ class Cleaning():
         if nextNum > len(members) - 1:
             nextNum = 0
         self.nextCleaner = members[nextNum]["name"]
-            
