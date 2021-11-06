@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="Zack Walker",
+    name="WG-Organizer",
     version="0.0.1",
     author="Zack Walker",
     author_email="zackdavidwalker94@gmail.com",
