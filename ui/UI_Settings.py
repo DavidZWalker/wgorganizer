@@ -2,12 +2,14 @@ from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
 from PyQt5.QtGui import * 
 import sys
+from core.WGInfo import WGInfo
 
 class UI_Settings(QWidget):
 
     def __init__(self):
         super().__init__()
         self.title = "Settings"
+        self.model = WGInfo()
         baseFont = "SF Pro"
 
         self.membersLabel = QLabel("WG-Mitglieder", self)

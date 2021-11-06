@@ -16,7 +16,7 @@ class UIManager():
         self.mainWindow = QMainWindow()
 
         # Load saved data
-        self.saveData = SaveData()
+        SaveData.readJson()
 
         # Setup UI Widgets
         self.ui = UI_MainWindow()
