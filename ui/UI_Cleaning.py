@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5 import QtCore
 from PyQt5.QtGui import * 
 import sys
+import schedule
 from core.Cleaning import Cleaning
 
 class UI_Cleaning(QWidget):
@@ -10,6 +11,7 @@ class UI_Cleaning(QWidget):
         super().__init__()
         self.title = "Putzdienst"
         self.model = Cleaning()
+        self.model.setUiUpdateCallback(self.updateCleaningDuty)
         baseFont = "SF Pro"
 
         self.thisWeekLabel = QLabel("Diese Woche", self)
@@ -27,3 +29,7 @@ class UI_Cleaning(QWidget):
         self.nextWeekName = QLabel(self.model.nextCleaner, self)
         self.nextWeekName.setFont(QFont(baseFont, 48, 0, False))
         self.nextWeekName.setGeometry(120, 325, 300, 75)
+
+    def updateCleaningDuty(self):
+        self.thisWeekName.setText(self.model.activeCleaner)
+        self.nextWeekName.setText(self.model.nextCleaner)

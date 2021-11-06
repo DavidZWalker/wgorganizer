@@ -17,4 +17,4 @@ class UI_Settings(QWidget):
         self.membersLabel.setGeometry(80, 80, 300, 50)
 
         self.applyButton = QPushButton("Übernehmen", self)
-        self.applyButton.setGeometry(390,764,100,50)
+        self.applyButton.setGeometry(764,440,150,50)
