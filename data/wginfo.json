@@ -1,0 +1,29 @@
+{
+    "members" : [
+        {
+            "name" : "Marleen",
+            "available": "True"
+        },
+        {
+            "name" : "Sofia",
+            "available": "True"
+        },
+        {
+            "name" : "Johannes",
+            "available": "True"
+        },
+        {
+            "name" : "Franzi",
+            "available": "True"
+        },
+        {
+            "name" : "Zack",
+            "available": "True"
+        },
+        {
+            "name" : "Fady",
+            "available": "True"
+        }
+    ],
+    "activeCleaningDuty" : "Marleen"
+}

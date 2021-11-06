@@ -7,7 +7,7 @@ from ui.UI_MainWindow import UI_MainWindow
 from ui.UI_Cleaning import UI_Cleaning
 from ui.UI_Settings import UI_Settings
 from util.DateTimeProvider import DateTimeProvider
-from core.WGInfo import WGInfo
+from core.SaveData import SaveData
 
 
 class UIManager():
@@ -15,8 +15,8 @@ class UIManager():
         # self.setWindowFlag(Qt.FramelessWindowHint)
         self.mainWindow = QMainWindow()
 
-        # Setup backend
-        self.wginfo = WGInfo()
+        # Load saved data
+        self.saveData = SaveData()
 
         # Setup UI Widgets
         self.ui = UI_MainWindow()
