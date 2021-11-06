@@ -2,7 +2,7 @@ import sys
 import json
 
 class SaveData():
-    dataFilePath = "data/wginfo.json"
+    dataFilePath = "src/data/wginfo.json"
     data = {}
 
     def readJson():
