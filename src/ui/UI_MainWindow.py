@@ -1,3 +1,4 @@
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import * 
 from PyQt5 import QtCore
 from PyQt5.QtGui import *
@@ -14,6 +15,8 @@ class UI_MainWindow(QMainWindow):
         mainWindow.setMinimumSize(QtCore.QSize(1024, 600))
         mainWindow.setMaximumSize(QtCore.QSize(1024, 600))
         mainWindow.setGeometry(0,0,1024,600)
+
+        iconSize = QtCore.QSize(40,40)
 
         self.datetimeProvider = DateTimeProvider()
         self.startTimer()
@@ -42,9 +45,13 @@ class UI_MainWindow(QMainWindow):
 
         self.putzdienstButton = QToolButton(self.sidebar)
         self.putzdienstButton.setGeometry(0,0,80,80)
+        self.putzdienstButton.setIcon(QtGui.QIcon("src/ui/icons/cleaning.png"))
+        self.putzdienstButton.setIconSize(iconSize)
 
         self.settingsButton = QToolButton(self.sidebar)
         self.settingsButton.setGeometry(0,520,80,80)
+        self.settingsButton.setIcon(QtGui.QIcon("src/ui/icons/gear.png"))
+        self.settingsButton.setIconSize(iconSize)
 
     def startTimer(self):
         timer = QTimer(self)
