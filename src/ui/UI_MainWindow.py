@@ -27,10 +27,11 @@ class UI_MainWindow(QMainWindow):
 
         self.titlebar = QWidget(mainWindow)
         self.titlebar.setGeometry(80,0,944,80)
-        self.titlebar.setStyleSheet("background-color: rgb(150,150,150)")
+        self.titlebar.setStyleSheet("background-color: rgb(46,46,46)")
 
         self.content = QStackedWidget(mainWindow)
         self.content.setGeometry(80,80,944,520)
+        self.content.setStyleSheet("background-color: ghostwhite; color: black")
 
         self.datelabel = QLabel(self.datetimeProvider.getDateAsString(), self.titlebar)
         self.datelabel.setGeometry(750,15,150,25)
@@ -40,7 +41,7 @@ class UI_MainWindow(QMainWindow):
         self.timelabel.setFont(QFont(baseFont, 30, 0, True))
 
         self.title = QLabel("TITLE", self.titlebar)
-        self.title.setGeometry(80,15,397,50)
+        self.title.setGeometry(80,0,500,75)
         self.title.setFont(QFont(baseFont, 50))
 
         self.putzdienstButton = QToolButton(self.sidebar)
@@ -48,6 +49,11 @@ class UI_MainWindow(QMainWindow):
         self.putzdienstButton.setIcon(QtGui.QIcon("src/ui/icons/cleaning.png"))
         self.putzdienstButton.setIconSize(iconSize)
 
+        self.membersButton = QToolButton(self.sidebar)
+        self.membersButton.setGeometry(0,80,80,80)
+        self.membersButton.setIcon(QtGui.QIcon("src/ui/icons/members.png"))
+        self.membersButton.setIconSize(iconSize)
+        
         self.settingsButton = QToolButton(self.sidebar)
         self.settingsButton.setGeometry(0,520,80,80)
         self.settingsButton.setIcon(QtGui.QIcon("src/ui/icons/gear.png"))
