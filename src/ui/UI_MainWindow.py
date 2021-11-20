@@ -44,13 +44,18 @@ class UI_MainWindow(QMainWindow):
         self.title.setGeometry(80,0,500,75)
         self.title.setFont(QFont(baseFont, 50))
 
+        self.dashboardButton = QToolButton(self.sidebar)
+        self.dashboardButton.setGeometry(0,0,80,80)
+        self.dashboardButton.setIcon(QtGui.QIcon("src/ui/icons/dashboard.png"))
+        self.dashboardButton.setIconSize(iconSize)
+        
         self.putzdienstButton = QToolButton(self.sidebar)
-        self.putzdienstButton.setGeometry(0,0,80,80)
+        self.putzdienstButton.setGeometry(0,80,80,80)
         self.putzdienstButton.setIcon(QtGui.QIcon("src/ui/icons/cleaning.png"))
         self.putzdienstButton.setIconSize(iconSize)
 
         self.membersButton = QToolButton(self.sidebar)
-        self.membersButton.setGeometry(0,80,80,80)
+        self.membersButton.setGeometry(0,160,80,80)
         self.membersButton.setIcon(QtGui.QIcon("src/ui/icons/members.png"))
         self.membersButton.setIconSize(iconSize)
         
