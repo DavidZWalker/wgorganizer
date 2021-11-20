@@ -30,9 +30,13 @@ class UIManager():
         if widgetName == "cleaning":
             self.ui.title.setText(self.cleaningScreen.title)
             self.ui.content.setCurrentWidget(self.cleaningScreen)
+            self.currentScreen = self.cleaningScreen
         elif widgetName == "settings":
             self.ui.title.setText(self.settingsScreen.title)
             self.ui.content.setCurrentWidget(self.settingsScreen)
+            self.currentScreen = self.settingsScreen
+
+        self.currentScreen.onSwitch()
 
     def show(self):
         self.mainWindow.show()

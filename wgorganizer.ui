@@ -56,7 +56,7 @@
        <x>0</x>
        <y>0</y>
        <width>82</width>
-       <height>231</height>
+       <height>258</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="list">
@@ -139,7 +139,7 @@
     <widget class="QLabel" name="title">
      <property name="geometry">
       <rect>
-       <x>50</x>
+       <x>30</x>
        <y>10</y>
        <width>481</width>
        <height>61</height>
@@ -159,7 +159,7 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Putzdienst</string>
+      <string>Title</string>
      </property>
     </widget>
     <widget class="QLabel" name="datelabel">
@@ -170,6 +170,11 @@
        <width>60</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>.SF Compact</family>
+      </font>
      </property>
      <property name="text">
       <string>Date</string>
@@ -201,7 +206,24 @@
     <property name="styleSheet">
      <string notr="true">background-color: white;</string>
     </property>
-    <widget class="QWidget" name="putzdienst"/>
+    <widget class="QWidget" name="putzdienst">
+     <widget class="QTextEdit" name="textEdit">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>50</y>
+        <width>191</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="settings"/>
    </widget>
   </widget>

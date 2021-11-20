@@ -27,7 +27,6 @@ class Cleaning():
         self.nextCleaner = members[nextNum]["name"]
 
     def updateCleaningDuty(self):
-        print("updating cleaning duty...")
         SaveData.data["activeCleaningDuty"] = self.nextCleaner
         self.loadActiveCleaner()
         self.loadNextCleaner()

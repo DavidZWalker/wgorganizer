@@ -4,8 +4,9 @@ from PyQt5.QtGui import *
 import sys
 import schedule
 from core.Cleaning import Cleaning
+from core.TabBase import TabBase
 
-class UI_Cleaning(QWidget):
+class UI_Cleaning(QWidget, TabBase):
     
     def __init__(self):
         super().__init__()
@@ -33,3 +34,12 @@ class UI_Cleaning(QWidget):
     def updateCleaningDuty(self):
         self.thisWeekName.setText(self.model.activeCleaner)
         self.nextWeekName.setText(self.model.nextCleaner)
+
+    def updateUI(self):
+        self.thisWeekName.setText(self.model.activeCleaner)
+        self.nextWeekName.setText(self.model.nextCleaner)
+
+    def onSwitch(self):
+        self.model.loadActiveCleaner()
+        self.model.loadNextCleaner()
+        self.updateUI()
